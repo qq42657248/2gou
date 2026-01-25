@@ -44,25 +44,19 @@
 
 ---
 
-## <font style="color:#2F8EF4;">Vercel 平台托管项目</font>
+##  <font style="color:#2F8EF4;">Vercel 平台托管项目</font>
+
 ### 打开[https://vercel.com/](https://vercel.com/)没有账号，注册一个账号，然后绑定你的 Github， 或者用你 Github 直接登录。
 
-
 ### 新建项目
-<!-- 这是一张图片，ocr 内容为： -->
-![](https://cdn.nlark.com/yuque/0/2026/png/54515742/1769324559579-4d92b203-5dd3-4c07-b319-603002554bc0.png)
-
+![](/blogs/yysuni/00c9704deb2e48e4.png)
 ### 导入 Github 仓库中克隆的项目
-<!-- 这是一张图片，ocr 内容为： -->
-![](https://cdn.nlark.com/yuque/0/2026/png/54515742/1769324597518-4d2458cb-d3dc-4935-ab50-7178419b6717.png)
-
+![](/blogs/yysuni/f808d325f502fcdf.png)
 ### 按照上图和记事本中记录的填写变量，填写完成后点击<font style="color:#DF2A3F;"> Deploy </font>部署等待大概一分钟，部署完毕
-<!-- 这是一张图片，ocr 内容为： -->
-![](https://cdn.nlark.com/yuque/0/2026/png/54515742/1769324830007-d77ae283-4091-40e8-9a09-bd8e78ecf756.png)
-
+![](/blogs/yysuni/874ea056042ade1d.png)
 ### 出现这个画面，证明你已经部署完毕了。点击 <font style="color:#DF2A3F;">Continue to Dashboard</font> 打开仪表盘
-<!-- 这是一张图片，ocr 内容为： -->
-![](https://cdn.nlark.com/yuque/0/2026/png/54515742/1769324969078-1fd8d371-72c2-4138-9cfc-bcb4d58caefc.png)
+![](/blogs/yysuni/656102aa0a4859fb.png)
+![](/blogs/yysuni/97e1cd2f83780eba.png)
 
 
 
