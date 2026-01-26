@@ -129,117 +129,116 @@ export function SiteSettings({
 			<div className='mt-4'>
 				{formData.enablePasswordAccess && (
 					<div className='bg-secondary/10 flex-1 min-w-[120px] rounded-lg border p-2 text-sm relative'>
-						<div className='absolute top-2 right-2'>
-							<label className='flex items-center gap-2'>
-								<input
-									type='checkbox'
-									checked={formData.enablePasswordAccess ?? false}
-									onChange={e => setFormData({ ...formData, enablePasswordAccess: e.target.checked })}
-									className='accent-brand h-4 w-4 rounded'
-								/>
-								<span className='text-sm font-medium'>开启密码访问</span>
-							</label>
+						<div className='flex items-start gap-2'>
+							<div className='space-y-2 w-full'>
+								<label className='flex items-center gap-2'>
+									<input
+										type='checkbox'
+										checked={formData.enablePasswordAccess ?? false}
+										onChange={e => setFormData({ ...formData, enablePasswordAccess: e.target.checked })}
+										className='accent-brand h-4 w-4 rounded'
+									/>
+									<span className='text-sm font-medium'>开启密码访问</span>
+								</label>
+								<label className='flex items-center gap-2'>
+									<input
+										type='checkbox'
+										checked={(formData.passwordAccessCategories ?? []).includes('Notes')}
+										onChange={(e) => {
+											let updatedCategories = [...(formData.passwordAccessCategories ?? [])];
+											if (e.target.checked) {
+												if (!updatedCategories.includes('Notes')) {
+													updatedCategories.push('Notes');
+												}
+											} else {
+												updatedCategories = updatedCategories.filter(cat => cat !== 'Notes');
+											}
+											setFormData({ ...formData, passwordAccessCategories: updatedCategories });
+										}}
+										className='accent-brand h-4 w-4 rounded'
+									/>
+									<span>{formData.passwordAccessPassword && (formData.passwordAccessCategories ?? []).includes('Notes') ? '🔒' : '🔓'} 笔记</span>
+								</label>
+								<label className='flex items-center gap-2'>
+									<input
+										type='checkbox'
+										checked={(formData.passwordAccessCategories ?? []).includes('Soft')}
+										onChange={(e) => {
+											let updatedCategories = [...(formData.passwordAccessCategories ?? [])];
+											if (e.target.checked) {
+												if (!updatedCategories.includes('Soft')) {
+													updatedCategories.push('Soft');
+												}
+											} else {
+												updatedCategories = updatedCategories.filter(cat => cat !== 'Soft');
+											}
+											setFormData({ ...formData, passwordAccessCategories: updatedCategories });
+										}}
+										className='accent-brand h-4 w-4 rounded'
+									/>
+									<span>{formData.passwordAccessPassword && (formData.passwordAccessCategories ?? []).includes('Soft') ? '🔒' : '🔓'} 软件</span>
+								</label>
+								<label className='flex items-center gap-2'>
+									<input
+										type='checkbox'
+										checked={(formData.passwordAccessCategories ?? []).includes('Games')}
+										onChange={(e) => {
+											let updatedCategories = [...(formData.passwordAccessCategories ?? [])];
+											if (e.target.checked) {
+												if (!updatedCategories.includes('Games')) {
+													updatedCategories.push('Games');
+												}
+											} else {
+												updatedCategories = updatedCategories.filter(cat => cat !== 'Games');
+											}
+											setFormData({ ...formData, passwordAccessCategories: updatedCategories });
+										}}
+										className='accent-brand h-4 w-4 rounded'
+									/>
+									<span>{formData.passwordAccessPassword && (formData.passwordAccessCategories ?? []).includes('Games') ? '🔒' : '🔓'} 游戏</span>
+								</label>
+								<label className='flex items-center gap-2'>
+									<input
+										type='checkbox'
+										checked={(formData.passwordAccessCategories ?? []).includes('Chara')}
+										onChange={(e) => {
+											let updatedCategories = [...(formData.passwordAccessCategories ?? [])];
+											if (e.target.checked) {
+												if (!updatedCategories.includes('Chara')) {
+													updatedCategories.push('Chara');
+												}
+											} else {
+												updatedCategories = updatedCategories.filter(cat => cat !== 'Chara');
+											}
+											setFormData({ ...formData, passwordAccessCategories: updatedCategories });
+										}}
+										className='accent-brand h-4 w-4 rounded'
+									/>
+									<span>{formData.passwordAccessPassword && (formData.passwordAccessCategories ?? []).includes('Chara') ? '🔒' : '🔓'} 角色</span>
+								</label>
+								<label className='flex items-center gap-2'>
+									<input
+										type='checkbox'
+										checked={(formData.passwordAccessCategories ?? []).includes('blog')}
+										onChange={(e) => {
+											let updatedCategories = [...(formData.passwordAccessCategories ?? [])];
+											if (e.target.checked) {
+												if (!updatedCategories.includes('blog')) {
+													updatedCategories.push('blog');
+												}
+											} else {
+												updatedCategories = updatedCategories.filter(cat => cat !== 'blog');
+											}
+											setFormData({ ...formData, passwordAccessCategories: updatedCategories });
+										}}
+										className='accent-brand h-4 w-4 rounded'
+									/>
+									<span>{formData.passwordAccessPassword && (formData.passwordAccessCategories ?? []).includes('blog') ? '🔒' : '🔓'} 博客</span>
+								</label>
+							</div>
 						</div>
 
-						<div className='space-y-2 mt-8'>
-							<label className='flex items-center gap-2'>
-								<input
-									type='checkbox'
-									checked={(formData.passwordAccessCategories ?? []).includes('Notes')}
-									onChange={(e) => {
-										let updatedCategories = [...(formData.passwordAccessCategories ?? [])];
-										if (e.target.checked) {
-											if (!updatedCategories.includes('Notes')) {
-												updatedCategories.push('Notes');
-											}
-										} else {
-											updatedCategories = updatedCategories.filter(cat => cat !== 'Notes');
-										}
-										setFormData({ ...formData, passwordAccessCategories: updatedCategories });
-									}}
-									className='accent-brand h-4 w-4 rounded'
-								/>
-								<span>{formData.passwordAccessPassword && (formData.passwordAccessCategories ?? []).includes('Notes') ? '🔒' : '🔓'} 笔记</span>
-							</label>
-							<label className='flex items-center gap-2'>
-								<input
-									type='checkbox'
-									checked={(formData.passwordAccessCategories ?? []).includes('Soft')}
-									onChange={(e) => {
-										let updatedCategories = [...(formData.passwordAccessCategories ?? [])];
-										if (e.target.checked) {
-											if (!updatedCategories.includes('Soft')) {
-												updatedCategories.push('Soft');
-											}
-										} else {
-											updatedCategories = updatedCategories.filter(cat => cat !== 'Soft');
-										}
-										setFormData({ ...formData, passwordAccessCategories: updatedCategories });
-									}}
-									className='accent-brand h-4 w-4 rounded'
-								/>
-								<span>{formData.passwordAccessPassword && (formData.passwordAccessCategories ?? []).includes('Soft') ? '🔒' : '🔓'} 软件</span>
-							</label>
-							<label className='flex items-center gap-2'>
-								<input
-									type='checkbox'
-									checked={(formData.passwordAccessCategories ?? []).includes('Games')}
-									onChange={(e) => {
-										let updatedCategories = [...(formData.passwordAccessCategories ?? [])];
-										if (e.target.checked) {
-											if (!updatedCategories.includes('Games')) {
-												updatedCategories.push('Games');
-											}
-										} else {
-											updatedCategories = updatedCategories.filter(cat => cat !== 'Games');
-										}
-										setFormData({ ...formData, passwordAccessCategories: updatedCategories });
-									}}
-									className='accent-brand h-4 w-4 rounded'
-								/>
-								<span>{formData.passwordAccessPassword && (formData.passwordAccessCategories ?? []).includes('Games') ? '🔒' : '🔓'} 游戏</span>
-							</label>
-							<label className='flex items-center gap-2'>
-								<input
-									type='checkbox'
-									checked={(formData.passwordAccessCategories ?? []).includes('Chara')}
-									onChange={(e) => {
-										let updatedCategories = [...(formData.passwordAccessCategories ?? [])];
-										if (e.target.checked) {
-											if (!updatedCategories.includes('Chara')) {
-												updatedCategories.push('Chara');
-											}
-										} else {
-											updatedCategories = updatedCategories.filter(cat => cat !== 'Chara');
-										}
-										setFormData({ ...formData, passwordAccessCategories: updatedCategories });
-									}}
-									className='accent-brand h-4 w-4 rounded'
-								/>
-								<span>{formData.passwordAccessPassword && (formData.passwordAccessCategories ?? []).includes('Chara') ? '🔒' : '🔓'} 角色</span>
-							</label>
-							<label className='flex items-center gap-2'>
-								<input
-									type='checkbox'
-									checked={(formData.passwordAccessCategories ?? []).includes('blog')}
-									onChange={(e) => {
-										let updatedCategories = [...(formData.passwordAccessCategories ?? [])];
-										if (e.target.checked) {
-											if (!updatedCategories.includes('blog')) {
-												updatedCategories.push('blog');
-											}
-										} else {
-											updatedCategories = updatedCategories.filter(cat => cat !== 'blog');
-										}
-										setFormData({ ...formData, passwordAccessCategories: updatedCategories });
-									}}
-									className='accent-brand h-4 w-4 rounded'
-								/>
-								<span>{formData.passwordAccessPassword && (formData.passwordAccessCategories ?? []).includes('blog') ? '🔒' : '🔓'} 博客</span>
-							</label>
-						</div>
-
-						<div className='absolute bottom-2 right-2 w-40'>
+						<div className='mt-2'>
 							<input
 								type='password'
 								placeholder='请输入密码'
@@ -249,7 +248,7 @@ export function SiteSettings({
 							/>
 						</div>
 					</div>
-				)}
+					)}
 
 				{!formData.enablePasswordAccess && (
 					<label className='flex items-center gap-2'>
@@ -261,7 +260,7 @@ export function SiteSettings({
 						/>
 						<span className='text-sm font-medium'>开启密码访问</span>
 					</label>
-				)}
+					)}
 			</div>
 
 			<HatSection formData={formData} setFormData={setFormData} />
