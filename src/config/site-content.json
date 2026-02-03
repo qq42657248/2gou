@@ -38,7 +38,7 @@
 	"currentBackgroundImageId": "",
 	"socialButtons": [],
 	"clockShowSeconds": false,
-	"summaryInContent": false,
+	"summaryInContent": true,
 	"isCachePem": true,
 	"hideEditButton": false,
 	"enableCategories": true,
@@ -46,10 +46,7 @@
 	"hatFlipped": false,
 	"enableChristmas": true,
 	"enablePasswordAccess": true,
-	"passwordAccessCategories": [
-		"Chara",
-		"Games"
-	],
+	"passwordAccessCategories": [],
 	"passwordAccessPassword": "123456",
 	"beian": {
 		"text": "",
